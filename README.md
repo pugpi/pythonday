@@ -1,4 +1,4 @@
 pythonday
 =========
 
-Hotsite do Python Day Sergipe
+Hotsite do Python Day Piauí
