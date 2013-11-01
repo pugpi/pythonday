@@ -1,12 +1,16 @@
-from flask import Flask, render_template
-
-app = Flask(__name__)
+from flask import render_template
+from settings import app
+import sqlite3
 
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+    conn = sqlite3.connect('database2.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * from palestrantes')
+    palestrantes = cursor.fetchall()
+    return render_template('index.html', palestrantes=palestrantes)
 
 
 if __name__ == '__main__':
-	app.run(debug=True, host='0.0.0.0', port=8001)
+    app.run(port=8001)
