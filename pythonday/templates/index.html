@@ -54,7 +54,7 @@
 							<header>
 								<h2>Um dia inteiro de palestras e minicursos sobre uma das plataformas de programação que mais cresce no mundo</h2>
 							</header>
-							<p>26 de outubro de 2013 &bull; 8h30 às 19h &bull; <a href="#local">Neoworking</a></p>							
+							<p>18 de janeiro de 2014 &bull; 8h30 às 19h &bull; <a href="#local">(Local Indefinido)</a></p>
 							<a href="#inscricoes" class="button button-big">Faça sua inscrição</a>
 						</div>
 					</div>					
@@ -68,59 +68,37 @@
 						<h2>Palestrantes</h2>
 						<!-- <span>Odio turpis amet sed consequat eget posuere consequat.</span> -->
 					</header>
-					<div class="container">
-						<div class="row">
-							<div class="4u">
-								<section class="box box-style2">
-									<a href="#" class="image image-full">
-									<img src="/static/images/marcel.jpg" alt="" ></a>
-									<h3>Marcel Caraciolo</h3>
-									<p>PyCursos (PE)</p>	
-									
-									<hr>
-										 <h4><strong>Palestra:</strong> Python, a pílula azul da programação</h4>
+                    {% if palestrantes %}
+                        <div class="container">
+                            <div class="row">
+                                {% for palestrante in palestrantes %}
+                                    <div class="4u">
+                                        <section class="box box-style2">
+                                            <a href="#" class="image image-full">
+                                            <img src="/static/{{ palestrante.5 }}" alt="" ></a>
+                                            <h3>{{ palestrante.1 }}</h3>
+                                            <p>{{ palestrante.2 }}</p>
 
-										<p>Apresentamos Python e os 10 motivos pelo qual devemos conhece-la. Mercado, integrações, ferramentas, quem usa e principais dúvidas serão sanadas nesta palestra. Python é uma das plataformas livres que mais crescem no mundo. Por ser altamente produtiva e facil de aprender, é utilizada em startups, empresas e instituições de ensino.</p>
-										
-									<hr>
-										<h4><strong>Minicurso:</strong> Workshop de Python</h4>
+                                            <hr>
+                                                 <h4><strong>Palestra:</strong> {{ palestrante.3 }}</h4>
+                                                {% if palestrante.4 %}
+                                                    <p>{{ palestrante.4 }}</p>
+                                                {% endif %}
+                                            {% if palestrante.6 %}
+                                                <hr>
+                                                <h4><strong>Minicurso:</strong> Workshop de Python</h4>
 
-										<p>Neste workshop passaremos pelas funcionalidades básicas e avançadas de Python e pelos diversos paradigmas (procedural, orientado a objetos e funcional). O participante sairá com uma base para construir seus primeiros programas a partir deste mini-curso. <u>Público-alvo:</u> Iniciantes</p>
-									
-								</section>
-							</div>
-							<div class="4u">
-								<section class="box box-style2">
-									<a href="#" class="image image-full">
-									<img src="/static/images/osvaldo.jpg" alt="" ></a>
-									<h3>Osvaldo Matos Jr.</h3>
-									<p>JusBrasil (BA)</p>									
-									<hr>
-									<h4><strong>Palestra:</strong> Por quê o JusBrasil mudou para Python?</h4>
-									<p>Nessa apresentação procuro mostrar um case de sucesso que aconteceu na empresa JusBrasil. A empresa empregava Java em todos os projetos, e resolvemos mudar camada Web para Python, para agilizar o desenvolvimento e dar mais legibilidade ao código. Os resultados obtidos foram excelentes, e fazem parte da nossa nova plataforma. Mostrarei os critérios utilizados para escolha da tecnologia Flask e como foi usado no projeto.</p>
-								</section>
-							</div>
-							<div class="4u">
-								<section class="box box-style2">
-									<a href="#" class="image image-full">
-									<img src="/static/images/matheus.png" alt="" ></a>
-									<h3>Matheus Lima</h3>
-									<p>Popcode (SE)</p>									
-									<hr>
-										 <h4><strong>Palestra:</strong> Ganhando tempo com Python</h4>
-
-										<p>Como ser rápido entre a elaboração de um Pitch e o MVP do seu produto? Como a linguagem pode te ajudar a ser rápido no pontapé inicial? Saiba com quais ferramentas pode contar quando se inicia uma startup com Python.</p>
-										
-									<hr>
-										<h4><strong>Minicurso:</strong> Iniciando um projeto com Django</h4>
-
-										<p>Nesse workshop veremos as principais características do Django, como ele funciona, como instalar e como iniciar um projeto. Ao final teremos criado um projeto. e nossa primeira aplicação.. <u>Público-alvo:</u> Programadores com algum conhecimento de Python</p>
-
-										
-								</section>
-							</div>
-						</div>
-					</div>
+                                                <p>Neste workshop passaremos pelas funcionalidades básicas e avançadas de Python e pelos diversos paradigmas (procedural, orientado a objetos e funcional). O participante sairá com uma base para construir seus primeiros programas a partir deste mini-curso. <u>Público-alvo:</u> Iniciantes</p>
+                                            {% endif %}
+                                        </section>
+                                    </div>
+                                    {% if loop.index is divisibleby 3 %}
+                                        </div><div class="row">
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
 				</article>
 			</div>
 
@@ -140,34 +118,34 @@
 											<td><strong>08:00</strong></td><td>Recepção e credenciamento</td><td></td>
 										</tr>
 										<tr>
-											<td><strong>08:30</strong></td><td><a href="#palestrantes">Palestra: Python, a pílula azul da programação</a></td><td>Marcel Caraciolo</td>
+											<td><strong>08:30</strong></td><td><a href="#palestrantes">Palestra: </a></td><td></td>
 										</tr>
 										<tr>
-											<td><strong>09:30</strong></td><td><a href="#palestrantes">Palestra: Por quê o JusBrasil mudou para Python?</a></td><td>Osvaldo Matos Jr.</td>
+											<td><strong>09:30</strong></td><td><a href="#palestrantes">Palestra: </a></td><td></td>
 										</tr>
 										<tr>
 											<td><strong>10:30</strong></td><td>Coffee break</td><td></td>
 										</tr>
 										<tr>
-											<td><strong>11:00</strong></td><td><a href="#palestrantes">Palestra: Ganhando tempo com Python </td><td>Matheus Lima</a></td>
+											<td><strong>11:00</strong></td><td><a href="#palestrantes">Palestra: </a></td><td></td>
 										</tr>
 										<tr>
 											<td><strong>12:00</strong></td><td>Almoço</td><td></td>
 										</tr>
 										<tr>
-											<td><strong>13:00</strong></td><td><a href="#palestrantes">Minicurso: Python</a></td><td>Marcel Caraciolo</td>
+											<td><strong>13:00</strong></td><td><a href="#palestrantes">Minicurso: </a></td><td></td>
 										</tr>
 										<tr>
-											<td></td><td><a href="#palestrantes">Minicurso: Django</a></td><td>Matheus Lima</td>
+											<td></td><td><a href="#palestrantes">Minicurso: </a></td><td></td>
 										</tr>
 										<tr>
 											<td><strong>15:30</strong></td><td>Coffee break</td><td></td>
 										</tr>
 										<tr>
-											<td><strong>16:00</strong></td><td><a href="#palestrantes">Minicurso: Python</a></td><td>Marcel Caraciolo</td>
+											<td><strong>16:00</strong></td><td><a href="#palestrantes">Minicurso: </a></td><td></td>
 										</tr>
 										<tr>
-											<td></td><td><a href="#palestrantes">Minicurso: Django</a></td><td>Matheus Lima</td>
+											<td></td><td><a href="#palestrantes">Minicurso: </a></td><td></td>
 										</tr>
 										<tr>
 											<td><strong>19:00</strong></td><td>Encerramento</td><td></td>
@@ -211,19 +189,7 @@
 				<article id="patrocinadores">
 					<header>
 						<h2>Patrocinadores</h2>
-					</header>					
-					<div class="row">
-						<div class="4u">
-							&nbsp;
-						</div>
-						<div class="4u">
-							<a href="http://neoworking.com.br"><img src="/static/images/neoworking-logo.png"></a>	
-						</div>
-						<div class="4u">
-							&nbsp;
-						</div>
-						
-					</div>
+					</header>
 					<div class="row">
 						<div class="2u">
 							&nbsp;
@@ -232,26 +198,11 @@
 							<a href="http://pycursos.com"><img src="/static/images/pycursos.png"></a>
 						</div>
 						<div class="4u">
-							<a href="http://jusbrasil.com.br"><img src="/static/images/jusbrasil.png"></a>
+							&nbsp;
 						</div>
 						<div class="2u">
 							&nbsp;
 						</div>
-					</div>
-					<div class="row">						
-						<div class="2u">
-							&nbsp;
-						</div>
-						<div class="4u">
-							<a href="http://popcode.com.br"><img src="/static/images/popcode.png"></a>
-						</div>					
-						<div class="4u">
-							<a href="http://host079.com.br"><img src="/static/images/host079.png"></a>
-						</div>
-						<div class="2u">
-							&nbsp;
-						</div>
-
 					</div>
 					<div class="row">
 						<div class="2u">
@@ -274,7 +225,8 @@
 						</div>
 						<div class="4u">
 							<h3>Realização</h3>
-							<a href="http://pug-se.github.io"><img src="/static/images/pug-se.png"></a>	
+{#							<a href="http://facebook.com/groups/pugpi"><img src="/static/images/logo.jpg"></a>#}
+							<a href="http://facebook.com/groups/pugpi">PUG-PI</a>
 						</div>
 						<div class="4u">
 							&nbsp;
@@ -296,9 +248,9 @@
 						<div class="row">
 							<div class="12u">
 								<section class="box box-style2">
-									<h3>Neoworking</h3>
-									<p>Rua Edson Ribeiro, 552 - Salgado Filho, Aracaju - SE</p>
-									<iframe src="http://mapsengine.google.com/map/embed?mid=z5TgvOmxXl2o.kQuDoVZ239ws" width="640" height="480"></iframe>
+									<h3>Indefinido</h3>
+{#									<p>Rua Edson Ribeiro, 552 - Salgado Filho, Aracaju - SE</p>#}
+{#									<iframe src="http://mapsengine.google.com/map/embed?mid=z5TgvOmxXl2o.kQuDoVZ239ws" width="640" height="480"></iframe>#}
 								</section>								
 							</div>							
 						</div>
