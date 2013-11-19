@@ -5,7 +5,7 @@ import sqlite3
 
 @app.route('/')
 def index():
-    conn = sqlite3.connect('database2.db')
+    conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * from palestrantes')
     palestrantes = cursor.fetchall()
