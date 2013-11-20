@@ -1173,3 +1173,8 @@ table th[class^="col-"] {
   background-color: #faf2cc;
   border-color: #f8e5be;
 }
+
+.img-palestrante {
+    width: 367px;
+    height: 367px;
+}
